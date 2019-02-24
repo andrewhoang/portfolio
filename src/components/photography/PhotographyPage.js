@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import Gallery from 'react-photo-gallery';
-import SocialIcons from '../SocialIcons';
+import SocialIcons from '../common/SocialIcons';
 import Lightbox from 'react-images';
 import photos from './photos.json';
 

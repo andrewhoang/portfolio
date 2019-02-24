@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Footer from './Footer';
-import MainPage from './webdev/MainPage';
+import Footer from './common/Footer';
+import MainPage from './home/MainPage';
 import PhotographyPage from './photography/PhotographyPage';
-import LoadingWrapper from './LoadingWrapper';
+import LoadingWrapper from './common/LoadingWrapper';
 
 import { Route, Switch } from 'react-router-dom';
 
