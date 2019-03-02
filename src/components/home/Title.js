@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'react-bootstrap';
-// import SplitPane from 'react-split-pane';
-import SplitterLayout from 'react-splitter-layout';
 
 class Title extends Component {
 	render() {

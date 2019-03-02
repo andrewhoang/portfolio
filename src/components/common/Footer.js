@@ -7,7 +7,7 @@ class Footer extends Component {
 		return (
 			<div className={`footer sticky ${theme || ''}`}>
 				<p className="copyright">Andrew Hoang © {new Date().getFullYear()}</p>
-				<SocialIcons theme={theme == 'dark' ? 'light' : 'dark'} />
+				<SocialIcons theme={theme === 'dark' ? 'light' : 'dark'} />
 			</div>
 		);
 	}

@@ -3,11 +3,11 @@
 /********************* GLOBAL *********************/
 
 html {
-	overflow-y: scroll;
 	height: 100%;
 }
 
 body {
+	overflow-x: hidden;
 	position: relative !important;
 	background: #262626;
 	height: 100%;
@@ -164,6 +164,7 @@ p {
 
 /********************* NAV *********************/
 .navbar {
+	padding: 20px;
 	&.dark {
 		background: #222;
 		transition: background 500ms;
@@ -172,7 +173,6 @@ p {
 		background: transparent;
 		transition: background 500ms;
 	}
-	padding: 20px;
 	.navbar-collapse {
 		justify-content: flex-end;
 	}
@@ -195,13 +195,6 @@ p {
 		height: 34px;
 		border: none;
 		outline: none;
-		.line {
-			width: 100%;
-			float: left;
-			height: 2px;
-			background-color: #fff;
-			margin-bottom: 5px;
-		}
 	}
 }
 
@@ -402,7 +395,7 @@ p {
 
 #about {
 	background: #fff;
-	height: 85vh;
+	height: 75vh;
 	width: 100%;
 	box-shadow: 0 0px 10px rgba(34, 34, 34, 0.2);
 	/* flex-direction: column;
@@ -575,6 +568,9 @@ p {
 /******************** PHOTOGRAPHY ********************/
 
 #photography {
+	.section {
+		padding-bottom: 0px;
+	}
 	min-height: 100vh;
 	background: #fff;
 	width: 100%;
@@ -703,19 +699,38 @@ p {
 		.navbar-toggler {
 			z-index: 999;
 		}
+		.logo {
+			top: 20px;
+		}
+	}
+	.navbar-toggler-icon {
 	}
 	.navbar-collapse {
-		background: rgba(34, 34, 34, 0.9);
+		background: rgba(34, 34, 34, 0.99);
 		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
-		height: 100vh;
 		display: flex;
 		align-items: center;
 		justify-content: center !important;
 		text-align: center;
-		transition: height 0.7s;
+		a {
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			visibility: hidden;
+		}
+		&.collapsing {
+			height: 0 !important;
+		}
+		&.show {
+			height: 100vh;
+			transition: height 0.5s ease-in-out;
+			a {
+				visibility: visible;
+			}
+		}
 	}
 
 	.hero {
@@ -787,8 +802,9 @@ p {
 			&.about-text {
 				background: #fafafa;
 				box-shadow: 0 3px 3px rgba(34, 34, 34, 0.1);
-				padding: 50px;
+				padding: 20px;
 				border-radius: 5px;
+				font-size: 14px;
 			}
 			.about-col {
 				display: flex;
@@ -821,12 +837,28 @@ p {
 	}
 
 	#photography {
+		.section {
+			padding-bottom: 0px;
+		}
 		.sidebar {
 			position: relative !important;
 			flex-direction: row;
+			width: 100%;
+			white-space: nowrap;
+			flex-wrap: wrap;
+			justify-content: center;
+			.back {
+				margin: 10px 0;
+			}
+			h5 {
+				display: none;
+			}
 			.social-icons {
 				display: none;
 			}
+		}
+		.btn {
+			margin: 10px auto;
 		}
 	}
 

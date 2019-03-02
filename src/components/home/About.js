@@ -43,7 +43,7 @@ class About extends Component {
 							<Row>
 								<Col lg={4} sm={12} className="flex text-right">
 									<div className="display-pic-container">
-										<img src={image} className="display-pic" />
+										<img src={image} alt="dp" className="display-pic" />
 									</div>
 									<SocialIcons theme="dark" />
 								</Col>

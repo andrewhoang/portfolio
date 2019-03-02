@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { Row, Col, Button } from 'react-bootstrap';
 import ScrollTrigger from 'react-scroll-trigger';
-import SocialIcons from '../common/SocialIcons';
 
 class Contact extends Component {
 	constructor(props) {

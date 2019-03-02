@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Link as AnchorLink } from 'react-scroll';
 
 import Gallery from 'react-photo-gallery';
 import SocialIcons from '../common/SocialIcons';
@@ -14,6 +15,10 @@ class Photography extends Component {
 		this.state = { currentImage: 0, view: 'people' };
 		autoBind(this);
 	}
+
+	componentDidMount = () => {
+		window.scrollTo(0, 0);
+	};
 
 	openLightbox(event, obj) {
 		this.setState({
@@ -42,7 +47,7 @@ class Photography extends Component {
 	}
 
 	render() {
-		let { entered, view } = this.state;
+		let { view } = this.state;
 
 		let gallery;
 		switch (view) {
@@ -54,6 +59,9 @@ class Photography extends Component {
 				break;
 			case 'things':
 				gallery = photos.things;
+				break;
+			default:
+				gallery = [];
 				break;
 		}
 
@@ -77,7 +85,7 @@ class Photography extends Component {
 								{Object.keys(photos).map((key, i) => (
 									<span
 										key={i}
-										className={`nav-link ${key == view ? 'active' : ''}`}
+										className={`nav-link ${key === view ? 'active' : ''}`}
 										onClick={() => this.setState({ view: key }, () => console.log(this.state.view))}
 									>
 										{key}
@@ -92,6 +100,9 @@ class Photography extends Component {
 						<Col md={10}>
 							<Gallery photos={gallery} onClick={this.openLightbox} />
 						</Col>
+						<AnchorLink className="btn" to="photography" spy={true} smooth={true} duration={500}>
+							Back to Top
+						</AnchorLink>
 						<Lightbox
 							images={gallery}
 							onClose={this.closeLightbox}

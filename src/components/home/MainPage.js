@@ -6,6 +6,9 @@ import About from './About';
 import Contact from './Contact';
 
 class MainPage extends Component {
+	componentDidMount = () => {
+		window.scrollTo(0, 0);
+	};
 	render() {
 		return (
 			<div>

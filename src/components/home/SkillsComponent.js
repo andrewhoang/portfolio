@@ -24,9 +24,7 @@ class SkillsComponent extends Component {
 
 	componentWillReceiveProps = nextProps => {
 		if (nextProps.entered !== this.props.entered) {
-			this.state.skills.map((_, i) => {
-				this[`countUp ${i}`].click();
-			});
+			this.state.skills.map((_, i) => this[`countUp ${i}`].click());
 		}
 	};
 

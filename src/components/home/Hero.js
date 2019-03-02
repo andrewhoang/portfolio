@@ -17,7 +17,7 @@ class Hero extends Component {
 							to="about"
 							spy={true}
 							smooth={true}
-							offset={-75}
+							offset={-80}
 							duration={500}
 						>
 							Web Development
