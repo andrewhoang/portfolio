@@ -9,22 +9,24 @@ class Hero extends Component {
 	render() {
 		return (
 			<Row className="hero">
-				<Title />
-				<Row className=" action vertical-center">
-					<AnchorLink
-						className="btn home-btn"
-						to="about"
-						spy={true}
-						smooth={true}
-						offset={-75}
-						duration={500}
-					>
-						Web Development
-					</AnchorLink>
-					<Link className="btn home-btn" to="photography">
-						Photography
-					</Link>
-				</Row>
+				<div className="home-container">
+					<Title />
+					<Row className="action">
+						<AnchorLink
+							className="btn home-btn"
+							to="about"
+							spy={true}
+							smooth={true}
+							offset={-75}
+							duration={500}
+						>
+							Web Development
+						</AnchorLink>
+						<Link className="btn home-btn" to="photography">
+							Photography
+						</Link>
+					</Row>
+				</div>
 			</Row>
 		);
 	}

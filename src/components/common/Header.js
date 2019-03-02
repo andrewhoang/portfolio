@@ -32,10 +32,11 @@ class Header extends Component {
 	render() {
 		let { scrolled } = this.state;
 		return (
-			<Navbar collapseOnSelect fixed="top" className={scrolled ? 'dark' : 'transparent'}>
-				<NavbarBrand>
+			<Navbar collapseOnSelect fixed="top" expand="lg" className={scrolled ? 'dark' : 'transparent'}>
+				<Navbar.Brand>
 					<img src="http://andrew-hoang.com/img/myAvatar-white.png" className="logo" alt="logo" />
-				</NavbarBrand>
+				</Navbar.Brand>
+				<Navbar.Toggle />
 				<Navbar.Collapse>
 					<Nav>
 						<AnchorLink className="nav-link" to="hero" spy={true} smooth={true} duration={500}>
