@@ -18,7 +18,9 @@ class Contact extends Component {
 				<div id="contact">
 					<Row className="section">
 						<Col md={12} className={className}>
-							<h1 className={`hvr-pulse section-title light`}>Let's Talk!</h1>
+							<a href="mailto:andrw.hoang@gmail.com" className={`hvr-pulse section-title light`}>
+								Let's Talk!
+							</a>
 							<p>
 								If any of these points at all have piqued your interest, please feel free to get in
 								touch!

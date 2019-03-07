@@ -207,9 +207,9 @@ p {
 		top: 0;
 		width: 100%;
 		height: 100%;
-		opacity: 0.4;
+		opacity: 0.39;
 		background: url('https://ya-webdesign.com/images250_/circle-shadow-png-2.png') no-repeat !important;
-		background-size: 200px 30px !important;
+		background-size: 180px 30px !important;
 		background-position: center 60% !important;
 	}
 }
@@ -433,18 +433,44 @@ p {
 }
 
 .display-pic-container {
-	background: -webkit-linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
-	padding: 10px;
-	border-radius: 50%;
-}
+	height: 320px;
+	width: 320px;
+	position: relative;
+	&:hover {
+		.display-pic-border {
+			animation: spin 2s linear infinite;
+		}
+	}
+	@keyframes spin {
+		100% {
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
 
-.display-pic {
-	border-radius: 50%;
-	width: 300px;
-	height: 300px;
-	border: 10px solid white;
-	border-radius: 50%;
-	display: inline-block;
+	.display-pic-border {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: -webkit-linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+		padding: 10px;
+		border-radius: 50%;
+	}
+
+	.display-pic {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: 50%;
+		width: 300px;
+		height: 300px;
+		border: 10px solid white;
+		border-radius: 50%;
+		// display: none;
+	}
 }
 
 .social-icons {
@@ -453,6 +479,10 @@ p {
 	svg {
 		margin: 20px;
 		text-align: center;
+		&:hover {
+			filter: invert(70%);
+			transition: filter 0.3s;
+		}
 	}
 	&.dark svg {
 		color: #333 !important;
@@ -469,6 +499,62 @@ p {
 .skills-chart {
 	border-left: 0.5px solid rgba(34, 34, 34, 0.3);
 	border-bottom: 0.5px solid rgba(34, 34, 34, 0.3);
+	.skills {
+		padding: 0;
+		.skillbar {
+			display: block;
+			position: relative;
+			background: #eee;
+			margin-bottom: 15px;
+			width: 100%;
+			height: 40px;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			-webkit-transition: 0.4s linear;
+			transition: 0.4s linear;
+			-webkit-transition-property: width, background-color;
+			transition-property: width, background-color;
+			.skillbar-title {
+				position: absolute;
+				background: #70aabd;
+				top: 0;
+				left: 0;
+				width: 20%;
+				text-align: center;
+				font-size: 13px;
+				color: #fff;
+				-webkit-border-top-left-radius: 3px;
+				-webkit-border-bottom-left-radius: 4px;
+				border-top-left-radius: 3px;
+				border-bottom-left-radius: 3px;
+				span {
+					display: block;
+					background: rgba(0, 0, 0, 0.1);
+					padding: 0 20px;
+					height: 40px;
+					line-height: 40px;
+				}
+			}
+			.skillbar-bar {
+				background: #70aabd;
+				height: 40px;
+				width: 0px;
+				border-radius: 3px;
+				text-align: right;
+				-webkit-border-radius: 3px;
+				.skill-bar-percent {
+					text-align: right;
+					font-size: 12px;
+					padding: 0 10px;
+					line-height: 40px;
+					color: rgba(255, 255, 255, 0.8);
+				}
+				&:hover {
+					background: darken(#70aabd, 10%);
+				}
+			}
+		}
+	}
 }
 
 .axis {
@@ -478,33 +564,13 @@ p {
 	padding-left: 0;
 	margin-top: 10px;
 	text-align: right;
-}
-
-.label {
-	list-style: none;
-	display: table-cell;
-	text-transform: uppercase;
-	font-size: 12px;
-	padding-right: 15px;
-}
-
-.skills {
-	padding: 0;
-}
-
-.skillbar {
-	display: block;
-	position: relative;
-	background: #eee;
-	margin-bottom: 15px;
-	width: 100%;
-	height: 40px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	-webkit-transition: 0.4s linear;
-	transition: 0.4s linear;
-	-webkit-transition-property: width, background-color;
-	transition-property: width, background-color;
+	.label {
+		list-style: none;
+		display: table-cell;
+		text-transform: uppercase;
+		font-size: 13px;
+		padding-right: 15px;
+	}
 }
 
 .skills-bar {
@@ -513,56 +579,6 @@ p {
 	width: 0px;
 	line-height: 20px;
 	padding: 5px 5px 5px 0;
-}
-
-.skillbar-title {
-	position: absolute;
-	background: #70aabd;
-	top: 0;
-	left: 0;
-	width: 20%;
-	text-align: center;
-	font-size: 13px;
-	color: #fff;
-	-webkit-border-top-left-radius: 3px;
-	-webkit-border-bottom-left-radius: 4px;
-	border-top-left-radius: 3px;
-	border-bottom-left-radius: 3px;
-}
-
-.skillbar-title span {
-	display: block;
-	background: rgba(0, 0, 0, 0.1);
-	padding: 0 20px;
-	height: 40px;
-	line-height: 40px;
-}
-
-.skillbar-bar {
-	background: #70aabd;
-	height: 40px;
-	width: 0px;
-	border-radius: 3px;
-	text-align: right;
-	-webkit-border-radius: 3px;
-}
-/* 
-.skillbar-bar {
-} */
-
-.skillbar-bar.default {
-	width: 0 !important;
-}
-
-.skill-bar-percent {
-	/* position: absolute;
-	right: 10px;
-	top: 0; */
-	text-align: right;
-	font-size: 12px;
-	padding: 0 10px;
-	line-height: 40px;
-	color: rgba(255, 255, 255, 0.8);
 }
 
 /******************** PHOTOGRAPHY ********************/
@@ -613,7 +629,14 @@ p {
 	.section {
 		width: 80vw;
 	}
-	h1,
+	a {
+		text-decoration: none;
+		font-weight: 500;
+		margin-bottom: 40px;
+		letter-spacing: 0.35rem;
+		font-weight: 600;
+	}
+	a,
 	p {
 		color: #fff;
 	}
@@ -821,15 +844,13 @@ p {
 				}
 			}
 		}
-		.display-pic-container {
+		.display-pic-border {
 			background: -webkit-linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
 			padding: 8px;
 			border-radius: 50%;
 		}
 		.display-pic {
 			border-radius: 50%;
-			width: 200px;
-			height: 200px;
 			border: 10px solid white;
 			border-radius: 50%;
 			display: inline-block;
@@ -872,5 +893,13 @@ p {
 @media (min-width: 880px) and (max-width: 1241px) {
 	#about {
 		height: auto;
+	}
+}
+
+@media (max-height: 800px) {
+	.loading {
+		&:before {
+			background-position: center 65% !important;
+		}
 	}
 }

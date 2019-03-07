@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import Footer from './common/Footer';
 import MainPage from './home/MainPage';
 import PhotographyPage from './photography/PhotographyPage';
 import LoadingWrapper from './common/LoadingWrapper';
-
-import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
 	constructor(props) {
@@ -14,6 +13,9 @@ class App extends Component {
 	}
 
 	componentDidMount = () => {
+		console.log(
+			`Hello! If you're interested in anything that you've seen, please feel free to contact me at andrw.hoang@gmail.com.`
+		);
 		setTimeout(() => this.setState({ rendered: true }), 3000);
 	};
 

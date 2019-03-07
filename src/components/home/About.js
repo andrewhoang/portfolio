@@ -7,12 +7,14 @@ import SocialIcons from '../common/SocialIcons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import image from '../../assets/img/DP2019.jpg';
+
+import img from '../../assets/img/DP2019.jpg';
+import img2 from '../../assets/img/DP2019-2.jpg';
 
 class About extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { entered: false, index: 0, direction: null };
+		this.state = { entered: false, index: 0, direction: null, image: img };
 		autoBind(this);
 	}
 
@@ -23,7 +25,7 @@ class About extends Component {
 	};
 
 	render() {
-		let { entered, index, direction } = this.state;
+		let { entered, index, direction, image } = this.state;
 
 		return (
 			<div id="about" className="section">
@@ -42,7 +44,12 @@ class About extends Component {
 						<Carousel.Item>
 							<Row>
 								<Col lg={4} sm={12} className="flex text-right">
-									<div className="display-pic-container">
+									<div
+										className="display-pic-container"
+										onMouseEnter={() => this.setState({ image: img2 })}
+										onMouseLeave={() => this.setState({ image: img })}
+									>
+										<div className="display-pic-border" />
 										<img src={image} alt="dp" className="display-pic" />
 									</div>
 									<SocialIcons theme="dark" />
