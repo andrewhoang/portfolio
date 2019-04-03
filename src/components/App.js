@@ -9,12 +9,13 @@ import LoadingWrapper from './common/LoadingWrapper';
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { rendered: false };
+		this.state = { rendered: true };
 	}
 
 	componentDidMount = () => {
 		console.log(
-			`Hello! If you're interested in anything that you've seen, please feel free to contact me at andrw.hoang@gmail.com.`
+			`%c 👋 Hello! If you're interested in anything that you've seen, please feel free to contact me at andrw.hoang@gmail.com.`,
+			'color: white; text-align: center; padding-bottom: 15px'
 		);
 		setTimeout(() => this.setState({ rendered: true }), 3000);
 	};

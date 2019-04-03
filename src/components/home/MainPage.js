@@ -1,22 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import Hero from './Hero';
 import Header from '../common/Header';
 import About from './About';
+import Projects from './Projects';
 import Contact from './Contact';
 
 class MainPage extends Component {
 	componentDidMount = () => {
 		window.scrollTo(0, 0);
 	};
+
 	render() {
 		return (
-			<div>
+			<Fragment>
 				<Header />
 				<Hero />
 				<About />
+				<Projects />
 				<Contact />
-			</div>
+			</Fragment>
 		);
 	}
 }

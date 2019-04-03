@@ -74,6 +74,17 @@ class Header extends Component {
 						>
 							About
 						</AnchorLink>
+						<AnchorLink
+							className="nav-link"
+							to="projects"
+							spy={true}
+							offset={-75}
+							smooth={true}
+							duration={500}
+							onClick={this.closeNav}
+						>
+							Projects
+						</AnchorLink>
 						<Link className="nav-link" to="photography">
 							Photography
 						</Link>

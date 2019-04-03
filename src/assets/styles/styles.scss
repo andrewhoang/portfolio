@@ -4,13 +4,14 @@
 
 html {
 	height: 100%;
+	width: 100%;
 }
 
 body {
-	overflow-x: hidden;
 	position: relative !important;
 	background: #262626;
 	height: 100%;
+	width: 100%;
 	min-height: 100%;
 	color: #222;
 	margin: 0;
@@ -49,7 +50,8 @@ h3 {
 }
 
 h2 {
-	font-size: 25px;
+	font-size: 20px;
+	letter-spacing: 0;
 }
 
 h3 {
@@ -58,6 +60,10 @@ h3 {
 
 p {
 	line-height: 30px;
+}
+
+a {
+	text-decoration: none !important;
 }
 
 * ::-webkit-scrollbar {
@@ -216,6 +222,7 @@ p {
 
 .logo {
 	width: 100px;
+	position: absolute;
 	top: 45%;
 	animation: floating 3000ms linear infinite !important;
 	padding-bottom: 20px;
@@ -242,7 +249,7 @@ p {
 }
 
 /******************** HERO HOME ********************/
-.hero {
+#hero {
 	background: linear-gradient(rgba(34, 34, 34, 0.7), rgba(34, 34, 34, 0.7)), url(../img/hero.jpg);
 	background-size: cover !important;
 	background-position: center !important;
@@ -395,11 +402,9 @@ p {
 
 #about {
 	background: #fff;
-	height: 75vh;
+	min-height: 50vh;
 	width: 100%;
 	box-shadow: 0 0px 10px rgba(34, 34, 34, 0.2);
-	/* flex-direction: column;
-	justify-content: center; */
 	p {
 		width: 100%;
 		margin: 0 auto;
@@ -583,6 +588,10 @@ p {
 
 /******************** PHOTOGRAPHY ********************/
 
+body {
+	overflow-x: hidden;
+}
+
 #photography {
 	.section {
 		padding-bottom: 0px;
@@ -616,6 +625,30 @@ p {
 		&.back {
 			color: #333;
 			margin-top: 20px;
+		}
+	}
+}
+
+/******************** PROJECTS SECTION ********************/
+
+#projects {
+	background: #fff;
+	width: 100%;
+	box-shadow: 0 0px 10px rgba(34, 34, 34, 0.2);
+	.project-container {
+		position: relative;
+		img.preview {
+			max-width: 100%;
+			height: auto;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		.preview-container {
+			text-align: right;
+		}
+		.project-detail {
+			width: auto;
 		}
 	}
 }
@@ -717,6 +750,15 @@ p {
 }
 
 @media (max-width: 879px) {
+	html {
+		overflow-x: hidden;
+		height: auto;
+	}
+	body {
+		position: relative;
+		overflow-x: hidden;
+		width: 100%;
+	}
 	.navbar {
 		.logo,
 		.navbar-toggler {
@@ -727,6 +769,7 @@ p {
 		}
 	}
 	.navbar-toggler-icon {
+		filter: invert(1) contrast(500%);
 	}
 	.navbar-collapse {
 		background: rgba(34, 34, 34, 0.99);
@@ -756,7 +799,7 @@ p {
 		}
 	}
 
-	.hero {
+	#hero {
 		.title {
 			padding: 40px 50px;
 			h1 {
@@ -812,6 +855,9 @@ p {
 		background: #fff;
 		height: auto;
 		width: 100%;
+		.carousel-container {
+			padding: 15px;
+		}
 		.carousel-item {
 			height: auto;
 		}
@@ -844,16 +890,50 @@ p {
 				}
 			}
 		}
+		.display-pic-container {
+			width: 300px;
+			height: 300px;
+		}
 		.display-pic-border {
 			background: -webkit-linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
 			padding: 8px;
 			border-radius: 50%;
 		}
 		.display-pic {
+			height: 280px;
+			width: 280px;
 			border-radius: 50%;
 			border: 10px solid white;
 			border-radius: 50%;
 			display: inline-block;
+		}
+	}
+
+	/******************** PROJECTS SECTION ********************/
+
+	#projects {
+		background: #fff;
+		width: 100%;
+		box-shadow: 0 0px 10px rgba(34, 34, 34, 0.2);
+		.project-container {
+			width: auto;
+			img.preview {
+				width: 90vw;
+				&:hover {
+					cursor: pointer;
+				}
+			}
+			.preview-container {
+				text-align: center;
+			}
+			.project-detail {
+				h2 {
+					text-align: center;
+				}
+				font-size: 14px;
+				text-align: justify;
+				padding: 30px;
+			}
 		}
 	}
 
@@ -899,7 +979,7 @@ p {
 @media (max-height: 800px) {
 	.loading {
 		&:before {
-			background-position: center 65% !important;
+			background-position: center 64% !important;
 		}
 	}
 }

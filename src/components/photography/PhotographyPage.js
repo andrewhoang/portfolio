@@ -73,8 +73,8 @@ class Photography extends Component {
 							<h1 className="section-title">Photography</h1>
 							<p>
 								My passion for photography goes beyond satisfying my aesthetic needs (that's what web
-								development is for). Photography takes me places but also introduces new faces. If you
-								share this passion of mine and you're interested in collaborating, let's link up!
+								development is for). Photography not only takes me places but also introduces new faces.
+								If you share this passion of mine and you're interested in collaborating, let's link up!
 							</p>
 						</Col>
 					</Row>

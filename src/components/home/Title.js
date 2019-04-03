@@ -8,7 +8,7 @@ class Title extends Component {
 				<h1 className="animated fadeIn">
 					Andrew <strong>Hoang</strong>
 				</h1>
-				<p className="animated fadeIn">I went to business school, but ended up doing other things.</p>
+				<p className="animated fadeIn">Developer, Photographer, & Adventurer</p>
 			</div>
 		);
 	}

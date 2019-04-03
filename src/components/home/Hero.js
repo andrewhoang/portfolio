@@ -8,7 +8,7 @@ import Title from './Title';
 class Hero extends Component {
 	render() {
 		return (
-			<Row className="hero">
+			<Row id="hero">
 				<div className="home-container">
 					<Title />
 					<Row className="action">

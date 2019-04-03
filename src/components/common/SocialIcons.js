@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube, faLinkedinIn, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 class SocialIcons extends Component {
@@ -7,6 +8,9 @@ class SocialIcons extends Component {
 		let { theme, size } = this.props;
 		return (
 			<div className={`social-icons ${theme || ''} ${size || ''}`}>
+				<a href="mailto:andrw.hoang@gmail.com">
+					<FontAwesomeIcon icon={faPaperPlane} className="icon-sm" />
+				</a>
 				<a href="https://www.linkedin.com/in/andrew-hoang-b3313695" target="_blank">
 					<FontAwesomeIcon icon={faLinkedinIn} className="icon-sm" />
 				</a>

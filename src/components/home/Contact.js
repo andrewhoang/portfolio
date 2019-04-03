@@ -14,8 +14,8 @@ class Contact extends Component {
 		let { entered } = this.state;
 		let className = `${entered ? 'animated bounceIn ' : ''} text-center`;
 		return (
-			<ScrollTrigger onEnter={() => this.setState({ entered: true })} triggerOnLoad={false}>
-				<div id="contact">
+			<div id="contact">
+				<ScrollTrigger onEnter={() => this.setState({ entered: true })} triggerOnLoad={false}>
 					<Row className="section">
 						<Col md={12} className={className}>
 							<a href="mailto:andrw.hoang@gmail.com" className={`hvr-pulse section-title light`}>
@@ -30,8 +30,8 @@ class Contact extends Component {
 							</Button>
 						</Col>
 					</Row>
-				</div>
-			</ScrollTrigger>
+				</ScrollTrigger>
+			</div>
 		);
 	}
 }
