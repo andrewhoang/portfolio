@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import autoBind from 'react-autobind';
 
 import { Row, Col, Carousel } from 'react-bootstrap';
 import SkillsComponent from './SkillsComponent';
@@ -8,14 +7,12 @@ import SocialIcons from '../common/SocialIcons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-import img from '../../assets/img/DP2019.jpg';
-import img2 from '../../assets/img/DP2019-2.jpg';
+import image from '../../assets/img/DP2019.jpg';
 
 class About extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { entered: false, index: 0, direction: null, image: img };
-		autoBind(this);
+		this.state = { entered: false, index: 0, direction: null };
 	}
 
 	handleSelect = (selectedIndex, e) => {
@@ -24,8 +21,8 @@ class About extends Component {
 		);
 	};
 
-	render() {
-		let { entered, index, direction, image } = this.state;
+	render = () => {
+		let { entered, index, direction } = this.state;
 
 		return (
 			<div id="about" className="section">
@@ -44,11 +41,7 @@ class About extends Component {
 						<Carousel.Item>
 							<Row>
 								<Col lg={4} sm={12} className="flex text-right">
-									<div
-										className="display-pic-container"
-										onMouseEnter={() => this.setState({ image: img2 })}
-										onMouseLeave={() => this.setState({ image: img })}
-									>
+									<div className="display-pic-container">
 										<div className="display-pic-border" />
 										<img src={image} alt="dp" className="display-pic" />
 									</div>
@@ -84,7 +77,7 @@ class About extends Component {
 				</div>
 			</div>
 		);
-	}
+	};
 }
 
 export default About;

@@ -1,36 +1,33 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Footer from './common/Footer';
 import MainPage from './home/MainPage';
+import NotFound from './NotFound';
 import PhotographyPage from './photography/PhotographyPage';
 import LoadingWrapper from './common/LoadingWrapper';
+import Footer from './common/Footer';
 
-class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { rendered: true };
-	}
+const App = () => {
+	const [rendered, setRendered] = useState(false);
 
-	componentDidMount = () => {
+	useEffect(() => {
 		console.log(
 			`%c 👋 Hello! If you're interested in anything that you've seen, please feel free to contact me at andrw.hoang@gmail.com.`,
 			'color: white; text-align: center; padding-bottom: 15px'
 		);
-		setTimeout(() => this.setState({ rendered: true }), 3000);
-	};
+		setTimeout(() => setRendered(true), 3000);
+	}, []);
 
-	render() {
-		return (
-			<LoadingWrapper rendered={this.state.rendered}>
-				<Switch>
-					<Route exact path="/" component={MainPage} />
-					<Route path="/photography" component={PhotographyPage} />
-				</Switch>
-				<Footer theme="dark" />
-			</LoadingWrapper>
-		);
-	}
-}
+	return (
+		<LoadingWrapper rendered={rendered}>
+			<Switch>
+				<Route exact path="/" component={MainPage} />
+				<Route path="/photography" component={PhotographyPage} />
+				<Route path="*" component={NotFound} />
+			</Switch>
+			<Footer theme="dark" />
+		</LoadingWrapper>
+	);
+};
 
 export default App;

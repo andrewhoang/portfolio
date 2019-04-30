@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import autoBind from 'react-autobind';
+
 import { Link as AnchorLink } from 'react-scroll';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
@@ -8,16 +8,15 @@ class Header extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
-		autoBind(this);
 	}
 
 	componentDidMount = () => {
 		window.addEventListener('scroll', this.listenToScroll, false);
 	};
 
-	componentWillUnmount() {
+	componentWillUnmount = () => {
 		window.removeEventListener('scroll', this.listenToScroll);
-	}
+	};
 
 	listenToScroll = () => {
 		const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -28,9 +27,9 @@ class Header extends Component {
 		});
 	};
 
-	setNavExpanded(expanded) {
+	setNavExpanded = expanded => {
 		this.setState({ navExpanded: expanded });
-	}
+	};
 
 	closeNav = () => {
 		this.setState({ navExpanded: false });
@@ -48,7 +47,16 @@ class Header extends Component {
 				expanded={this.state.navExpanded}
 			>
 				<Navbar.Brand>
-					<img src="http://andrew-hoang.com/img/myAvatar-white.png" className="logo" alt="logo" />
+					<AnchorLink
+						className="nav-link"
+						to="hero"
+						spy={true}
+						smooth={true}
+						duration={500}
+						onClick={this.closeNav}
+					>
+						<img src="http://andrew-hoang.com/img/myAvatar-white.png" className="logo" alt="logo" />
+					</AnchorLink>
 				</Navbar.Brand>
 				<Navbar.Toggle />
 				<Navbar.Collapse>

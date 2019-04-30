@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import autoBind from 'react-autobind';
+
 import { Row, Col } from 'react-bootstrap';
 import CountUp from 'react-countup';
 
@@ -19,7 +19,6 @@ class SkillsComponent extends Component {
 				{ name: 'Super Smash Bros.', percent: 75 },
 			],
 		};
-		autoBind(this);
 	}
 
 	componentWillReceiveProps = nextProps => {
@@ -28,7 +27,7 @@ class SkillsComponent extends Component {
 		}
 	};
 
-	render() {
+	render = () => {
 		let { entered } = this.props;
 		let { skills } = this.state;
 
@@ -75,7 +74,7 @@ class SkillsComponent extends Component {
 				</Row>
 			</div>
 		);
-	}
+	};
 }
 
 export default SkillsComponent;

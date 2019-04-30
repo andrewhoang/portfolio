@@ -1,16 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Loading extends Component {
-	render() {
-		if (!this.props.rendered) {
-			return (
-				<div className="flex loading" style={{ height: '100vh' }}>
-					<img className="logo" alt="logo" src="http://andrew-hoang.com/img/myAvatar-white.png" width={100} />
-				</div>
-			);
-		}
-		return this.props.children;
-	}
-}
-
+const Loading = ({ rendered, children }) =>
+	!rendered ? (
+		<div className="flex loading">
+			<img className="logo" src="http://andrew-hoang.com/img/myAvatar-white.png" alt="logo" width={100} />
+		</div>
+	) : (
+		children
+	);
 export default Loading;
